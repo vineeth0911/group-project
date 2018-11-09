@@ -48,71 +48,6 @@ App = {
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_propId",
-				"type": "uint256"
-			}
-		],
-		"name": "getPropertyDetails",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint8"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_propId",
-				"type": "uint256"
-			}
-		],
-		"name": "rejectProperty",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_newUser",
-				"type": "address"
-			}
-		],
-		"name": "approveUsers",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -132,17 +67,22 @@ App = {
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "creatorAdmin",
-		"outputs": [
+		"constant": false,
+		"inputs": [
 			{
-				"name": "",
+				"name": "_newUser",
 				"type": "address"
 			}
 		],
+		"name": "addNewUser",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -151,13 +91,47 @@ App = {
 			{
 				"name": "_propId",
 				"type": "uint256"
-			},
+			}
+		],
+		"name": "approveChangeOwnership",
+		"outputs": [
 			{
-				"name": "_newValue",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_propId",
 				"type": "uint256"
 			}
 		],
-		"name": "changeValue",
+		"name": "approveProperty",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_newUser",
+				"type": "address"
+			}
+		],
+		"name": "approveUsers",
 		"outputs": [
 			{
 				"name": "",
@@ -199,8 +173,35 @@ App = {
 				"type": "uint256"
 			},
 			{
+				"name": "_newValue",
+				"type": "uint256"
+			}
+		],
+		"name": "changeValue",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_propId",
+				"type": "uint256"
+			},
+			{
 				"name": "_value",
 				"type": "uint256"
+			},
+			{
+				"name": "_locatity",
+				"type": "string"
 			},
 			{
 				"name": "_owner",
@@ -216,6 +217,103 @@ App = {
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_propId",
+				"type": "uint256"
+			}
+		],
+		"name": "rejectProperty",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "creatorAdmin",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_propId",
+				"type": "uint256"
+			}
+		],
+		"name": "getPropertyDetails",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint8"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "properties",
+		"outputs": [
+			{
+				"name": "status",
+				"type": "uint8"
+			},
+			{
+				"name": "value",
+				"type": "uint256"
+			},
+			{
+				"name": "locality",
+				"type": "string"
+			},
+			{
+				"name": "currOwner",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -257,25 +355,6 @@ App = {
 		"type": "function"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_newUser",
-				"type": "address"
-			}
-		],
-		"name": "addNewUser",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"constant": true,
 		"inputs": [
 			{
@@ -293,81 +372,10 @@ App = {
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_propId",
-				"type": "uint256"
-			}
-		],
-		"name": "approveProperty",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_propId",
-				"type": "uint256"
-			}
-		],
-		"name": "approveChangeOwnership",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "properties",
-		"outputs": [
-			{
-				"name": "status",
-				"type": "uint8"
-			},
-			{
-				"name": "value",
-				"type": "uint256"
-			},
-			{
-				"name": "currOwner",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
 	}
 ];
 
-App.contracts.asset =  web3.eth.contract(abi).at('0xe0f0aaa3e324ee6d9cc926db5e82ffe003d4e490');
+App.contracts.asset =  web3.eth.contract(abi).at('0x5cbb78cbc5d46e1ece0a5f7c470a143160fbbee6');
     return App.bindEvents();
   },
 
